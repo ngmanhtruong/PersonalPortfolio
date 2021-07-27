@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" 
+    integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" 
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="main.css">
+    <title>Truong's Portfolio</title>
+</head>
+<body>
+    <div class = "page-content">
+        <div class = "navigation">
+            <ul>
+                <li><a href = "#banner" onclick="toggleMenu()">Home</a></li>
+                <li><a href = "#about" onclick="toggleMenu()">About</a></li>
+                <li><a href = "#services" onclick="toggleMenu()">Services</a></li>
+                <li><a href = "#projects" onclick="toggleMenu()">Projects</a></li>
+                <!-- <li><a href = "#">Certifications</a></li> -->
+                <li><a href = "#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+        <div class = "main">
+            <div class = "topbar">
+                <a href="#" class = "logo">Portfolio</a>
+                <div class = "toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <!-- BANNER -->
+            <section class = "banner" id="banner">
+                <div class = "content">
+                    <div class = "img">
+                        <img src="profile.jpg" alt="profile-picture">
+                    </div>
+                    <h3>Nguyen Manh Truong</h3>
+                    <p>Front End Website Developer</p>
+                    <a href="cv/cv.html" class = "btn">My CV</a>
+                    <ul class = "social-media">
+                        <li><a href = "https://www.facebook.com/testarudo.nino"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href = "https://www.linkedin.com/in/ngmanhtruong/"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href = "https://github.com/ngmanhtruong"><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ABOUT ME -->
+            <section class = "about adjust" id = "about">
+                <div class = "title">
+                    <h2>About Me</h2>
+                </div>
+                <div class = "content">
+                    <div class = "textBox">
+                        <p>I am a hardworking, ambitious and eager to learn individual. I have 3 months working for Kyanon Digital as an Intern, 3 months in teaching programming at Teky Academy, 2 years in military which will help me a lots to work under the pressure.
+                        <br><br>I am seeking for an Junior position in the industry in which I can put into practice for my knowledge and experience, ultimately benefiting the operations of the organization that I work for.</p>
+                    </div>
+                    <div class = "img">
+                        <img src="ohshoot.jpg" alt="about-me-picture">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES -->
+            <section class = "services adjust" id = "services">
+                <div class = "title">
+                    <h2>My Skills</h2>
+                    <p></p>
+                </div>
+                <div class = "content">
+                    <div class = "wrap">
+                        <img src="html5-dark.png" alt="html5">
+                        <h2>HTML 5</h2>
+                        <p>Up-to-date structure for your website with the newest <b>HTML 5</b>.</p>
+                    </div>
+                    <div class = "wrap">
+                        <img src="/css3-dark.png" alt="css3">
+                        <h2>CSS 3</h2>
+                        <p>Styling your website layout, color and responsive for all devices with <b>CSS 3</b>.</p>
+                    </div>
+                    <div class = "wrap">
+                        <img src="/bootstrap.png" alt="css3">
+                        <h2>Bootstrap 5</h2>
+                        <p>Up-to-date one of the largest css frameworks</p>
+                    </div>
+                    <div class = "wrap">
+                        <img src="/javascript.png" alt="javascript">
+                        <h2>Javascript</h2>
+                        <p>Using <b>Javascript</b> to make your web pages interactive, improve user experience.</p>
+                    </div>
+                    <div class = "wrap">
+                        <img src="/jquery.png" alt="javascript">
+                        <h2>Javascript</h2>
+                        <p>Making your website easier to handle, manipulate, animate with the most popular <b>Javascript</b> library.</p>
+                    </div>
+                    <div class = "wrap">
+                        <img src="/react.png" alt="reactjs">
+                        <h2>React JS</h2>
+                        <p>Handling the view layer, building modern applications and can be used for both web and mobile applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section class = "projects adjust" id = "projects">
+                <div class = "title">
+                    <h2>Recent Projects</h2>
+                    <p></p>
+                </div>
+                <div class = "content">
+                    <div class = "projects-wrap">
+                        <div class= "img">
+                            <img src="/project1.jpg" alt="project1">
+                        </div>
+                        <div class = "text">
+                            <h3>Project 01</h3>
+                        </div>
+                    </div>
+                    <div class = "projects-wrap">
+                        <div class= "img">
+                            <img src="/project2.jpg" alt="project2">
+                        </div>
+                        <div class = "text">
+                            <h3>Project 02</h3>
+                        </div>
+                    </div>
+                    <div class = "projects-wrap">
+                        <div class= "img">
+                            <img src="/project3.jpg" alt="project3">
+                        </div>
+                        <div class = "text">
+                            <h3>Project 03</h3>
+                        </div>
+                    </div>
+                    <div class = "projects-wrap">
+                        <div class= "img">
+                            <img src="/project4.jpg" alt="project4">
+                        </div>
+                        <div class = "text">
+                            <h3>Project 04</h3>
+                        </div>
+                    </div>
+                    <div class = "projects-wrap">
+                        <div class= "img">
+                            <img src="/project5.jpg" alt="project5">
+                        </div>
+                        <div class = "text">
+                            <h3>Project 05</h3>
+                        </div>
+                    </div>
+                    <div class = "projects-wrap">
+                        <div class= "img">
+                            <img src="/project6.jpg" alt="project6">
+                        </div>
+                        <div class = "text">
+                            <h3>Project 06</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT-->
+            <section class = "contact adjust" id = "contact">
+                <div class = "title">
+                    <h2>Contact Me</h2>
+                    <p></p>
+                </div>
+                <div class = "contact-form">
+                    <div class = "row">
+                        <input type="text" name = "firstName" placeholder="First Name">
+                        <input type="text" name = "lastName" placeholder="Last Name">
+                    </div>
+                    <div class = "row">
+                        <input type="text" name = "email" placeholder="Email Address">
+                        <input type="text" name = "mobile" placeholder="Mobile No.">
+                    </div>
+                    <div class = "row2">
+                        <textarea name="" placeholder="Message" id="textMail"></textarea>
+                    </div>
+                    <div class = "row2">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let topbar = document.querySelector('.topbar');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+        toggle.onclick = function(){
+            toggle.classList.toggle('active');
+            topbar.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+
+        }
+        //Fix menu responsive for mobile
+        function toggleMenu(){
+            let topbar = document.querySelector('.topbar');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            topbar.classList.remove('active');
+            navigation.classList.remove('active');
+            main.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
