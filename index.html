@@ -10,6 +10,10 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="main.css">
     <title>Truong's Portfolio</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous" defer></script>
 </head>
 <body>
     <div class = "page-content">
@@ -22,6 +26,8 @@
                 <!-- <li><a href = "#">Certifications</a></li> -->
                 <li><a href = "#contact" onclick="toggleMenu()">Contact</a></li>
             </ul>
+            <div class ="theme-switch">
+            </div>
         </div>
         <div class = "main">
             <div class = "topbar">
@@ -54,8 +60,12 @@
                 </div>
                 <div class = "content">
                     <div class = "textBox">
-                        <p>I am a hardworking, ambitious and eager to learn individual. I have 3 months working for Kyanon Digital as an Intern, 3 months in teaching programming at Teky Academy, 2 years in military which will help me a lots to work under the pressure.
-                        <br><br>I am seeking for an Junior position in the industry in which I can put into practice for my knowledge and experience, ultimately benefiting the operations of the organization that I work for.</p>
+                        <p>I am a hardworking, ambitious and eager to learn individual. I have 3 months working for <b>Kyanon Digital</b> as an Intern, 3 months in teaching programming at <b>Teky Academy</b>, <b>2 years in military</b> which will help me a lots to work under the pressure.
+                        <br><br>I'm seeking for a <b>Junior</b> position in the industry in which I can put into practice for my knowledge and experience, ultimately benefiting the operations of the organization that I work for.</p>
+                        <div class ="title">
+                            <h2>My Objective</h2>
+                            <p></p>
+                        </div>
                     </div>
                     <div class = "img">
                         <img src="ohshoot.jpg" alt="about-me-picture">
@@ -92,7 +102,7 @@
                     </div>
                     <div class = "wrap">
                         <img src="/jquery.png" alt="javascript">
-                        <h2>Javascript</h2>
+                        <h2>JQuery</h2>
                         <p>Making your website easier to handle, manipulate, animate with the most popular <b>Javascript</b> library.</p>
                     </div>
                     <div class = "wrap">
@@ -207,6 +217,14 @@
             topbar.classList.remove('active');
             navigation.classList.remove('active');
             main.classList.remove('active');
+        }
+
+        //Switch Theme
+        let themeSwitch = document.querySelector('.theme-switch');
+        let body = document.querySelector('body');
+
+        themeSwitch.onclick = () =>{
+            body.classList.toggle('dark')
         }
     </script>
 </body>
