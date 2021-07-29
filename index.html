@@ -10,21 +10,18 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="main.css">
     <title>Truong's Portfolio</title>
-    <script
-    src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous" defer></script>
+    <script src="jquery-3.6.0.js"></script>
 </head>
 <body>
     <div class = "page-content">
         <div class = "navigation">
             <ul>
-                <li><a href = "#banner" onclick="toggleMenu()">Home</a></li>
-                <li><a href = "#about" onclick="toggleMenu()">About</a></li>
-                <li><a href = "#services" onclick="toggleMenu()">Services</a></li>
-                <li><a href = "#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a id = "scrollBanner" href = "#banner" onclick="toggleMenu()">Home</a></li>
+                <li><a id = "scrollAbout" href = "#about" onclick="toggleMenu()">About</a></li>
+                <li><a id = "scrollServices" href ="#services" onclick="toggleMenu()">Services</a></li>
+                <li><a id = "scrollProjects" href = "#projects" onclick="toggleMenu()">Projects</a></li>
                 <!-- <li><a href = "#">Certifications</a></li> -->
-                <li><a href = "#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a id = "scrollContact" href = "#contact" onclick="toggleMenu()">Contact</a></li>
             </ul>
             <div class ="theme-switch">
             </div>
@@ -38,17 +35,56 @@
             </div>
             <!-- BANNER -->
             <section class = "banner" id="banner">
+                <div class = "playground">
+                    <div class = "block block1">
+                        <span>H</span><span>I</span><span>,</span>
+                    </div>
+                    <div class = "block block2">
+                        <span>I</span><span>'</span><span>M</span><span class = "spacing"> </span>
+                        <span> T</span><span>R</span><span>U</span><span>O</span><span>N</span><span>G</span><span>,</span>
+                    </div>
+                    <div class = "block block3">
+                        <span>I</span><span>T</span><span>'</span><span>S</span><span class = "spacing"> </span>
+                        <span> N</span><span>I</span><span>C</span><span>E</span><span class = "spacing"> </span>
+                        <span> T</span><span>O</span><span> </span><span class = "spacing"> </span>
+                        <span> H</span><span>A</span><span>V</span><span>E</span><span class = "spacing"> </span>
+                        <span> Y</span><span>O</span><span>U</span><span class = "spacing"> </span>
+                        <span> H</span><span>E</span><span>R</span><span>E</span><span>!</span>
+                    </div>
+                    <p>Front End Website Developer | Junior</p>
+
+                </div>
                 <div class = "content">
                     <div class = "img">
                         <img src="profile.jpg" alt="profile-picture">
                     </div>
                     <h3>Nguyen Manh Truong</h3>
-                    <p>Front End Website Developer</p>
-                    <a href="cv/cv.html" class = "btn">My CV</a>
+                    <a href="cv/cv.html" class = "btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        My CV
+                    </a>
                     <ul class = "social-media">
-                        <li><a href = "https://www.facebook.com/testarudo.nino"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href = "https://www.linkedin.com/in/ngmanhtruong/"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href = "https://github.com/ngmanhtruong"><i class="fab fa-github"></i></a></li>
+                        <li><a href = "https://www.facebook.com/testarudo.nino" target="_blank">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i class="fab fa-facebook"></i></a></li>
+                        <li><a href = "https://www.linkedin.com/in/ngmanhtruong/" target="_blank">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href = "https://github.com/ngmanhtruong" target="_blank">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i class="fab fa-github"></i></a></li>
                     </ul>
                 </div>
             </section>
@@ -81,31 +117,55 @@
                 </div>
                 <div class = "content">
                     <div class = "wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <img src="html5-dark.png" alt="html5">
                         <h2>HTML 5</h2>
                         <p>Up-to-date structure for your website with the newest <b>HTML 5</b>.</p>
                     </div>
                     <div class = "wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <img src="/css3-dark.png" alt="css3">
                         <h2>CSS 3</h2>
                         <p>Styling your website layout, color and responsive for all devices with <b>CSS 3</b>.</p>
                     </div>
                     <div class = "wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <img src="/bootstrap.png" alt="css3">
                         <h2>Bootstrap 5</h2>
                         <p>Up-to-date one of the largest css frameworks</p>
                     </div>
                     <div class = "wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <img src="/javascript.png" alt="javascript">
                         <h2>Javascript</h2>
                         <p>Using <b>Javascript</b> to make your web pages interactive, improve user experience.</p>
                     </div>
                     <div class = "wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <img src="/jquery.png" alt="javascript">
                         <h2>JQuery</h2>
                         <p>Making your website easier to handle, manipulate, animate with the most popular <b>Javascript</b> library.</p>
                     </div>
                     <div class = "wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <img src="/react.png" alt="reactjs">
                         <h2>React JS</h2>
                         <p>Handling the view layer, building modern applications and can be used for both web and mobile applications.</p>
@@ -190,14 +250,18 @@
                         <textarea name="" placeholder="Message" id="textMail"></textarea>
                     </div>
                     <div class = "row2">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                         <input type="submit" value="Submit">
                     </div>
                 </div>
             </section>
         </div>
     </div>
-
     <script>
+        
         let toggle = document.querySelector('.toggle');
         let topbar = document.querySelector('.topbar');
         let navigation = document.querySelector('.navigation');
@@ -224,8 +288,35 @@
         let body = document.querySelector('body');
 
         themeSwitch.onclick = () =>{
-            body.classList.toggle('dark')
+            body.classList.toggle('dark');
         }
+
+        //active on scroll
+        $('#scrollBanner').click(function(){
+            $('html,body').animate({
+                scrollTop:$("#banner").offset().top
+            },'slow');
+        });
+        $('#scrollAbout').click(function(){
+            $('html,body').animate({
+                scrollTop:$("#about").offset().top
+            },'slow');
+        });
+        $('#scrollServices').click(function(){
+            $('html,body').animate({
+                scrollTop:$("#services").offset().top
+            },'slow');
+        });
+        $('#scrollProjects').click(function(){
+            $('html,body').animate({
+                scrollTop:$("#projects").offset().top
+            },'slow');
+        });
+        $('#scrollContact').click(function(){
+            $('html,body').animate({
+                scrollTop:$("#contact").offset().top
+            },'slow');
+        });
     </script>
 </body>
 </html>
