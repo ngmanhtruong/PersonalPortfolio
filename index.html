@@ -12,16 +12,19 @@
     <title>Truong's Portfolio</title>
     <script src="jquery-3.6.0.js"></script>
 </head>
-<body>
+<body onunload="closeFunction()">
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
     <div class = "page-content">
         <div class = "navigation">
             <ul>
-                <li><a id = "scrollBanner" href = "#banner" onclick="toggleMenu()">Home</a></li>
-                <li><a id = "scrollAbout" href = "#about" onclick="toggleMenu()">About</a></li>
-                <li><a id = "scrollServices" href ="#services" onclick="toggleMenu()">Services</a></li>
-                <li><a id = "scrollProjects" href = "#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a id = "scrollBanner" onclick="toggleMenu()" data-section ="banner">Home</a></li>
+                <li><a id = "scrollAbout" onclick="toggleMenu()" data-section ="about">About</a></li>
+                <li><a id = "scrollServices" onclick="toggleMenu()" data-section ="services">Services</a></li>
+                <li><a id = "scrollProjects" onclick="toggleMenu()" data-section ="projects">Projects</a></li>
                 <!-- <li><a href = "#">Certifications</a></li> -->
-                <li><a id = "scrollContact" href = "#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a id = "scrollContact" onclick="toggleMenu()" data-section ="contact">Contact</a></li>
             </ul>
             <div class ="theme-switch">
             </div>
@@ -261,7 +264,13 @@
         </div>
     </div>
     <script>
-        
+        $(document).ready(function(){
+            setTimeout(function(){
+                $(".loader-wrapper").fadeOut("slow");
+            },1000);
+        });
+
+        //Toggle navigation and main, topbar
         let toggle = document.querySelector('.toggle');
         let topbar = document.querySelector('.topbar');
         let navigation = document.querySelector('.navigation');
@@ -291,32 +300,14 @@
             body.classList.toggle('dark');
         }
 
-        //active on scroll
-        $('#scrollBanner').click(function(){
-            $('html,body').animate({
-                scrollTop:$("#banner").offset().top
-            },'slow');
-        });
-        $('#scrollAbout').click(function(){
-            $('html,body').animate({
-                scrollTop:$("#about").offset().top
-            },'slow');
-        });
-        $('#scrollServices').click(function(){
-            $('html,body').animate({
-                scrollTop:$("#services").offset().top
-            },'slow');
-        });
-        $('#scrollProjects').click(function(){
-            $('html,body').animate({
-                scrollTop:$("#projects").offset().top
-            },'slow');
-        });
-        $('#scrollContact').click(function(){
-            $('html,body').animate({
-                scrollTop:$("#contact").offset().top
-            },'slow');
-        });
+        //Active on scroll
+        $('.navigation ul li a').click(function(){
+            var target = $(this).data('section');
+            $('html, body').animate({
+                scrollTop: $('#'+ target).offset().top
+            }, 1000);
+		})
+
     </script>
 </body>
 </html>

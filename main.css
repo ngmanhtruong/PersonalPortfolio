@@ -1,4 +1,98 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  75% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  75% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%; }
+  25% {
+    height: 0%; }
+  50% {
+    height: 100%; }
+  75% {
+    height: 100%; }
+  100% {
+    height: 0%; } }
+
+@keyframes loader-inner {
+  0% {
+    height: 0%; }
+  25% {
+    height: 0%; }
+  50% {
+    height: 100%; }
+  75% {
+    height: 100%; }
+  100% {
+    height: 0%; } }
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  padding: 0;
+  margin: 0; }
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  -webkit-animation: loader 2s infinite ease;
+  animation: loader 2s infinite ease; }
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  -webkit-animation: loader-inner 2s infinite ease-in;
+  animation: loader-inner 2s infinite ease-in; }
+
 @-webkit-keyframes lightson {
   0% {
     text-shadow: 0 0 0px var(--black), 0 0 0px var(--black); }
@@ -6,6 +100,7 @@
     text-shadow: 0 0 10px var(--black), 0 0 20px var(--black); }
   100% {
     text-shadow: 0 0 0px var(--black), 0 0 0px var(--black); } }
+
 @keyframes lightson {
   0% {
     text-shadow: 0 0 0px var(--black), 0 0 0px var(--black); }
@@ -535,15 +630,6 @@
   .dark section.projects .content .projects-wrap .text h3 {
     color: rgba(0, 0, 0, 0.7); }
 
-body {
-  overflow-x: hidden; }
-
-.page-content {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow-x: hidden; }
-
 h3 {
   position: relative;
   font-size: 1.4em;
@@ -644,7 +730,8 @@ p {
   overflow: hidden;
   -webkit-transition: width ease 0.5s, left ease 0.5s;
   -o-transition: width ease 0.5s, left ease 0.5s;
-  transition: width ease 0.5s, left ease 0.5s; }
+  transition: width ease 0.5s, left ease 0.5s;
+  z-index: 2; }
   @media (max-width: 1365px) {
     .navigation {
       z-index: 999;
@@ -693,25 +780,29 @@ p {
         .navigation ul li a:hover {
           opacity: 1; }
 
+.page-content {
+  overflow-x: hidden;
+  background: var(--background); }
+
 .main {
-  position: absolute;
-  width: calc(100% - 300px);
-  left: 300px;
-  background: var(--background);
-  min-height: 100vh;
-  -webkit-transition: width ease 0.5s, left ease 0.5s;
-  -o-transition: width ease 0.5s, left ease 0.5s;
-  transition: width ease 0.5s, left ease 0.5s; }
+  padding-left: 300px;
+  -webkit-transition: width ease 0.5s, margin ease 0.5s, padding 0.5s;
+  -o-transition: width ease 0.5s, margin ease 0.5s, padding 0.5s;
+  transition: width ease 0.5s, margin ease 0.5s, padding 0.5s;
+  background: var(--background); }
   @media (max-width: 1365px) {
     .main {
-      left: 0;
+      padding-left: 0;
       width: 100%; } }
+  @media (max-width: 992px) {
+    .main {
+      margin-left: 0; } }
   .main.active {
-    width: calc(100% - 0px);
-    left: 0; }
+    width: 100%;
+    padding-left: 0px; }
     @media (max-width: 992px) {
       .main.active {
-        left: 100%; } }
+        margin-left: 100%; } }
   .main .topbar {
     position: fixed;
     top: 0;
@@ -811,6 +902,7 @@ section {
     section.banner .playground {
       width: 49%;
       padding-left: 40px;
+      padding-right: 40px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -846,6 +938,10 @@ section {
         @media (max-width: 992px) {
           section.banner .playground .block span {
             font-size: 5vw; } }
+        @media (max-width: 767px) {
+          section.banner .playground .block span {
+            letter-spacing: 0px;
+            font-size: 4vw; } }
         section.banner .playground .block span:hover {
           color: var(--playground);
           -webkit-transform: scale(0.8);
@@ -859,6 +955,10 @@ section {
         section.banner .playground .block span.spacing {
           letter-spacing: 2px;
           padding: 0 5px; }
+          @media (max-width: 992px) {
+            section.banner .playground .block span.spacing {
+              letter-spacing: 0px;
+              padding: 0 2px; } }
       @media (max-width: 992px) {
         section.banner .playground p {
           text-align: center; } }
@@ -1009,8 +1109,14 @@ section {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
-        flex-direction: column; }
+        flex-direction: column;
+        -webkit-transition: all ease 0.5s;
+        -o-transition: all ease 0.5s;
+        transition: all ease 0.5s; }
         section.services .content .wrap:hover {
+          -webkit-transition: all ease 0.5s;
+          -o-transition: all ease 0.5s;
+          transition: all ease 0.5s;
           background: rgba(0, 0, 0, 0.5); }
           section.services .content .wrap:hover h2, section.services .content .wrap:hover p {
             color: white; }
