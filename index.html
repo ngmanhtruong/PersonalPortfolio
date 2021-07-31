@@ -11,11 +11,16 @@
     <link rel="stylesheet" href="main.css">
     <title>Truong's Portfolio</title>
     <script src="jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js" 
+    integrity="sha512-UgS0SVyy/0fZ0i48Rr7gKpnP+Jio3oC7M4XaKP3BJUB/guN6Zr4BjU0Hsle0ey2HJvPLHE5YQCXTDrx27Lhe7A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body onunload="closeFunction()">
+    <!-- LOADER -->
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
+    <!-- WRAP PAGE-->
     <div class = "page-content">
         <div class = "navigation">
             <ul>
@@ -264,12 +269,14 @@
         </div>
     </div>
     <script>
-        $(document).ready(function(){
-            setTimeout(function(){
-                $(".loader-wrapper").fadeOut("slow");
-            },1000);
-        });
-
+        window.onload = function(e){
+            var theme = sessionStorage.getItem('theme');
+            if (theme == 'toggled'){
+                body.classList.add('dark');
+            }
+            $(".loader-wrapper").fadeOut("slow");
+            animations();
+        }
         //Toggle navigation and main, topbar
         let toggle = document.querySelector('.toggle');
         let topbar = document.querySelector('.topbar');
@@ -298,6 +305,12 @@
 
         themeSwitch.onclick = () =>{
             body.classList.toggle('dark');
+
+            if (body.classList.contains('dark')){
+                sessionStorage.setItem('theme','toggled');
+            } else {
+                sessionStorage.setItem('theme','nottoggled');
+            }
         }
 
         //Active on scroll
@@ -307,6 +320,206 @@
                 scrollTop: $('#'+ target).offset().top
             }, 1000);
 		})
+
+        function animations(){
+            //ACTIVE NAVIGATION BAR WHEN SCROLL
+            var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: "100%"}});
+
+            new ScrollMagic.Scene({triggerElement: "#banner"})
+                    .setClassToggle("#scrollBanner", "active") // add class toggle
+                    .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#about"})
+                    .setClassToggle("#scrollAbout", "active") // add class toggle
+                    .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#services"})
+                    .setClassToggle("#scrollServices", "active") // add class toggle
+                    .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#projects"})
+                    .setClassToggle("#scrollProjects", "active") // add class toggle
+                    .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#contact"})
+                    .setClassToggle("#scrollContact", "active") // add class toggle
+                    .addTo(controller);
+
+            //new scroll magic animate
+            //PLAYGROUND ANIMATE
+            var controller = new ScrollMagic.Controller();
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.banner .playground .block span", "animate") // add class to reveal
+            .addTo(controller);
+
+            var spans = document.querySelectorAll('section.banner .playground .block span:nth-child(n)');
+            var delay = 0.1;
+            //HOW TO DISABLE HOVER UNBIND OR OFF ???
+            for (p of spans){
+                //console.log(p);
+                //Default delay là 0,1s
+                p.style.setProperty('transition-delay', delay + 's');
+
+                //delay cho mỗi chữ sẽ chạy lên nối tiếp nhau sau 0,1s
+                delay = delay + 0.1;
+            }
+            setTimeout(function(){
+                for (p of spans){
+                    p.style.setProperty('transition-delay', '0s');
+                }
+            },4200); //sau khi animation xong thi set transition-delay ve 0s de hover animation hoat dong
+
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.banner .playground p", "animate") // add class to reveal
+            .addTo(controller);
+
+            //NAVIGATION ANIMATE
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle(".navigation ul li", "animate") // add class to reveal
+            .addTo(controller);
+
+            //PROFILE ANIMATE
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.banner .content .img", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("h3", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.banner .content a", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: ".topbar",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.banner .content ul.social-media li a", "animate") // add class to reveal
+            .addTo(controller);
+
+            //ABOUT ME ANIMATION
+            new ScrollMagic.Scene({
+                triggerElement: "#about",
+                triggerHook: 0.9, // show, when scrolled 20% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.about .title h2", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#about",
+                triggerHook: 0.6, // show, when scrolled 20% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle(".textBox", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#about",
+                triggerHook: 0.6, // show, when scrolled 20% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.about .content .img", "animate") // add class to reveal
+            .addTo(controller);
+
+            //MY SKILLS
+            new ScrollMagic.Scene({
+                triggerElement: "#services",
+                triggerHook: 0.9, // show, when scrolled 20% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.services .title h2", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#services",
+                triggerHook: 0.6, // show, when scrolled 40% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle(".dark section.services .content .wrap:nth-child(1), .dark section.services .content .wrap:nth-child(2), .dark section.services .content .wrap:nth-child(3)", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#services",
+                triggerHook: 0.4, // show, when scrolled 60% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle(".dark section.services .content .wrap:nth-child(4), .dark section.services .content .wrap:nth-child(5), .dark section.services .content .wrap:nth-child(6)", "animate") // add class to reveal
+            .addTo(controller);
+
+            //PROJECTS
+            new ScrollMagic.Scene({
+                triggerElement: "#projects",
+                triggerHook: 0.9, // show, when scrolled 10% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.projects .title h2", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#projects",
+                triggerHook: 0.6, // show, when scrolled 60% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.projects .content .projects-wrap", "animate") // add class to reveal
+            .addTo(controller);
+
+            //CONTACT ME
+            new ScrollMagic.Scene({
+                triggerElement: "#contact",
+                triggerHook: 0.9, // show, when scrolled 20% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.contact .title h2", "animate") // add class to reveal
+            .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#contact",
+                triggerHook: 0.5, // show, when scrolled 50% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+            .setClassToggle("section.contact .contact-form", "animate") // add class to reveal
+            .addTo(controller);
+        }
 
     </script>
 </body>

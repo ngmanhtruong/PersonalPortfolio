@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import "animations";
 @mixin tablet{
     @media(max-width: 992px){
         @content;
@@ -153,12 +154,15 @@
                 a:hover{
                     text-shadow: 0 0 10px var(--black), 0 0 20px var(--black);
                 }
+                a.active{
+                    text-shadow: 0 0 10px var(--black), 0 0 20px var(--black);
+                    animation: lightson 3s ease infinite;
+                }
             }
         }
     }
     h3{
-        cursor: pointer;
-        transition: 0.5s;
+        animation: lightson 3s ease;
         &:hover{
             text-shadow: 0 0 10px var(--black), 0 0 20px var(--black);
         }
@@ -237,8 +241,18 @@
             }
         }
         &.banner{
-            .playground .block span:hover{
-                text-shadow: 0 0 10px #01f9c6;
+            .playground .block span{
+                &.animate{
+                    top: 0;
+                    opacity: 1;
+                    color: var(--black);
+                    &:hover{
+                        color: var(#01f9c6);
+                        transform: scale(0.8);
+                        transition: 0.1s transform, 0s color;
+                        text-shadow: 0 0 10px #01f9c6;
+                    }
+                }
             }
         } 
         &.banner .content ul.social-media li{
@@ -249,7 +263,7 @@
                         background: #0ff0fc;
                         box-shadow: 0 0 10px #0ff0fc, 0 0 20px #0ff0fc;
                         transition: linear 0.5s;
-                        transition-delay: 0.7s;
+                        transition-delay: 0.6s;
                         span{
                             &:nth-child(1){
                                 left: 100%;
@@ -279,6 +293,8 @@
                             width: 100%;
                             height: 2px;
                             background: linear-gradient(90deg, transparent, #0ff0fc);
+                            animation: neontop 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(2){
                             right: 0;
@@ -286,6 +302,8 @@
                             height: 100%;
                             width: 2px;
                             background: linear-gradient(180deg, transparent, #0ff0fc);
+                            animation: neonright 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(3){
                             bottom: 0;
@@ -293,7 +311,8 @@
                             width: 100%;
                             height: 2px;
                             background: linear-gradient(270deg, transparent, #0ff0fc);
-                            
+                            animation: neonbottom 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(4){
                             left: 0;
@@ -301,6 +320,8 @@
                             height: 100%;
                             width: 2px;
                             background: linear-gradient(0deg, transparent, #0ff0fc);
+                            animation: neonleft 1s;
+                            animation-iteration-count: 3;
                         }
                     }
                 }
@@ -312,7 +333,7 @@
                         background: #bc13fe;
                         box-shadow: 0 0 10px #bc13fe, 0 0 20px #bc13fe;
                         transition: linear 0.5s;
-                        transition-delay: 0.7s;
+                        transition-delay: 0.6s;
                         span{
                             &:nth-child(1){
                                 left: 100%;
@@ -342,6 +363,8 @@
                             width: 100%;
                             height: 2px;
                             background: linear-gradient(90deg, transparent, #bc13fe);
+                            animation: neontop 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(2){
                             right: 0;
@@ -349,6 +372,8 @@
                             height: 100%;
                             width: 2px;
                             background: linear-gradient(180deg, transparent, #bc13fe);
+                            animation: neonright 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(3){
                             bottom: 0;
@@ -356,7 +381,8 @@
                             width: 100%;
                             height: 2px;
                             background: linear-gradient(270deg, transparent, #bc13fe);
-                            
+                            animation: neonbottom 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(4){
                             left: 0;
@@ -364,6 +390,8 @@
                             height: 100%;
                             width: 2px;
                             background: linear-gradient(0deg, transparent, #bc13fe);
+                            animation: neonleft 1s;
+                            animation-iteration-count: 3;
                         }
                     }
                 }
@@ -375,7 +403,7 @@
                         background: #007ab9;
                         box-shadow: 0 0 10px #007ab9, 0 0 20px #007ab9;
                         transition: linear 0.5s;
-                        transition-delay: 0.7s;
+                        transition-delay: 0.6s;
                         span{
                             &:nth-child(1){
                                 left: 100%;
@@ -405,6 +433,8 @@
                             width: 100%;
                             height: 2px;
                             background: linear-gradient(90deg, transparent, #007ab9);
+                            animation: neontop 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(2){
                             right: 0;
@@ -412,6 +442,8 @@
                             height: 100%;
                             width: 2px;
                             background: linear-gradient(180deg, transparent, #007ab9);
+                            animation: neonright 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(3){
                             bottom: 0;
@@ -419,7 +451,8 @@
                             width: 100%;
                             height: 2px;
                             background: linear-gradient(270deg, transparent, #007ab9);
-                            
+                            animation: neonbottom 1s;
+                            animation-iteration-count: 3;
                         }
                         &:nth-child(4){
                             left: 0;
@@ -427,6 +460,8 @@
                             height: 100%;
                             width: 2px;
                             background: linear-gradient(0deg, transparent, #007ab9);
+                            animation: neonleft 1s;
+                            animation-iteration-count: 3;
                         }
                     }
                 }
@@ -555,6 +590,13 @@ h3{
     color: var(--black);
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: 1s ease;
+    top: 100px;
+    opacity: 0;
+    &.animate{
+        top: 0px;
+        opacity: 1;
+    }
 }
 p{
     color: #777;
@@ -570,9 +612,16 @@ p{
     margin-top: 10px;
     text-decoration: none;
     transition: ease 0.3s;
+    top: 100px;
+    opacity: 1;
+    transition: 1s;
     &:hover{
         background: var(--black2);
         color: #fff;
+    }
+    &.animate{
+        top: 0px;
+        opacity: 1;
     }
 }
 .title{
@@ -668,6 +717,13 @@ p{
             position: relative;
             width: 100%;
             list-style: none;
+            left: -50px;
+            transition: all ease 1s;
+            opacity: 0;
+            &.animate{
+                left: 0px;
+                opacity: 1;
+            }
             a{
                 position: relative;
                 display: block;
@@ -683,6 +739,9 @@ p{
                 opacity: 0.5;
                 cursor: pointer;
                 &:hover{
+                    opacity: 1;
+                }
+                &.active{
                     opacity: 1;
                 }
             }
@@ -809,7 +868,9 @@ section{
                     position: relative;
                     font-size: 2.5vw;
                     font-weight: bold;
-                    color: var(--black);
+                    color: var(--playground);
+                    top: 100px;
+                    opacity: 0;
                     letter-spacing: -3px;
                     display:inline-block;
                     cursor: pointer;
@@ -824,11 +885,6 @@ section{
                         letter-spacing: 0px;
                         font-size: 4vw;
                     }
-                    &:hover{
-                        color: var(--playground);
-                        transform: scale(0.8);
-                        transition: 0.1s transform, 0s color;
-                    }
                     &.spacing{
                         letter-spacing: 2px;
                         padding: 0 5px;
@@ -837,9 +893,28 @@ section{
                             padding: 0 2px;
                         }
                     }
+                    &.animate{
+                        top: 0;
+                        opacity: 1;
+                        color: var(--black);
+                        &:hover{
+                            color: var(--playground);
+                            transform: scale(0.8);
+                            transition: 0.1s transform, 0s color;
+                        }
+                    }
                 }
             }
             p{
+                position: relative;
+                top: 100px;
+                opacity: 0;
+                transition: ease 1s;
+                transition-delay: 4s;
+                &.animate{
+                    top: 0;
+                    opacity: 1;
+                }
                 @include tablet{
                     text-align: center;
                 }
@@ -859,9 +934,17 @@ section{
                 position: relative;
                 width: 400px;
                 height: 400px;
+                right: -200px;
+                opacity: 0;
                 overflow: hidden;
                 border-radius: 50%;
                 margin-bottom: 50px;
+                transition: all ease 1s;
+                transition-delay: 1s;
+                &.animate{
+                    right: 0px;
+                    opacity: 1;
+                }
                 @include tablet{
                     width: 300px;
                     height: 300px;
@@ -897,9 +980,17 @@ section{
                         text-decoration: none;
                         color: var(--black);
                         font-size: 1.2em;
+                        position: relative;
                         &:hover{
                             background: var(--black2);
                             color: #fff;
+                        }
+                        top: 100px;
+                        opacity: 0;
+                        transition: 1s ease;
+                        &.animate{
+                            top: 0px;
+                            opacity: 1;
                         }
                     }
                 }
@@ -908,6 +999,17 @@ section{
     }
     &.about{
         background: var(--background);
+        .title{
+            h2{
+                top: 100px;
+                opacity: 0;
+                transition: 1s ease;
+                &.animate{
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+        }
         .content{
             display: flex;
             justify-content: space-between;
@@ -922,6 +1024,14 @@ section{
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                position: relative;
+                right: 200px;
+                opacity: 0;
+                transition: 1s ease;
+                &.animate{
+                    right: 0px;
+                    opacity: 1;
+                }
                 @include mobile{
                     width: 100%;
                     max-width: 100%;
@@ -932,7 +1042,15 @@ section{
                 }
             }
             .img{
+                position: relative;
                 margin-left: 40px;
+                left: 150px;
+                transition: 2s ease;
+                opacity: 0;
+                &.animate{
+                    opacity: 1;
+                    left: 0;
+                }
                 @include mobile{
                     margin-left: 0px;
                     padding-top: 20px;
@@ -945,6 +1063,17 @@ section{
     }
     &.services{
         background: var(--background);
+        .title{
+            h2{
+                top: 100px;
+                opacity: 0;
+                transition: 1s ease;
+                &.animate{
+                    top: 0px;
+                    opacity: 1;
+                }
+            }
+        }
         .content{
             display: grid;
             grid-template-columns: repeat(3,1fr);
@@ -964,8 +1093,15 @@ section{
                 align-items: center;
                 flex-direction: column;
                 transition: all ease 0.5s;
+                position: relative;
+                opacity: 0;
+                top: 100px;
+                &.animate{
+                    opacity: 1;
+                    top: 0;
+                }
                 &:hover{
-                    transition: all ease 0.5s;
+                    transition: all ease 1s;
                     background: rgba(0,0,0,0.5);
                     h2, p{
                         color: white;
@@ -992,6 +1128,17 @@ section{
     }
     &.projects{
         background: var(--background);
+        .title{
+            h2{
+                opacity: 0;
+                bottom: 100px;
+                transition: all ease 1s;
+                &.animate{
+                    opacity: 1;
+                    bottom: 0;
+                }
+            }
+        }
         .content{
             display: grid;
             grid-template-columns: repeat(3,1fr);
@@ -1008,6 +1155,18 @@ section{
                 width: 100%;
                 height: 400px;
                 overflow: hidden;
+                opacity: 0;
+                transition: all ease 1s;
+                &:nth-child(even){
+                    top: 100px;
+                }
+                &:nth-child(odd){
+                    top: -100px;
+                }
+                &.animate{
+                    top: 0px;
+                    opacity: 1;
+                }
                 &:hover{
                     .img{
                         transform: translateY(-100%);
@@ -1060,11 +1219,29 @@ section{
         @include mobile{
             padding-bottom: 50px;
         }
+        .title{
+            h2{
+                opacity: 0;
+                top: -100px;
+                transition: all ease 1s;
+                &.animate{
+                    opacity: 1;
+                    top: 0px;
+                }
+            }
+        }
         .contact-form{
             position: relative;
             width: 100%;
             max-width: 800px;
             margin-top: 20px;
+            top: 150px;
+            opacity: 0;
+            transition: all ease 1s;
+            &.animate{
+                top: 0;
+                opacity: 1;
+            }
             .row{
                 width: 100%;
                 display: grid;

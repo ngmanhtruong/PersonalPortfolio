@@ -1,4 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@-webkit-keyframes flyInSpans {
+  0% {
+    top: 100px;
+    opacity: 0;
+    color: var(--playground); }
+  60% {
+    top: -10px;
+    opacity: 1; }
+  100% {
+    top: 0px;
+    opacity: 1;
+    color: var(--black); } }
+@keyframes flyInSpans {
+  0% {
+    top: 100px;
+    opacity: 0;
+    color: var(--playground); }
+  60% {
+    top: -10px;
+    opacity: 1; }
+  100% {
+    top: 0px;
+    opacity: 1;
+    color: var(--black); } }
+
 @-webkit-keyframes loader {
   0% {
     -webkit-transform: rotate(0deg);
@@ -15,6 +40,7 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
 @keyframes loader {
   0% {
     -webkit-transform: rotate(0deg);
@@ -210,11 +236,13 @@
     border-right: 1px solid rgba(0, 0, 0, 0.5); }
     .dark .navigation ul li a:hover {
       text-shadow: 0 0 10px var(--black), 0 0 20px var(--black); }
+    .dark .navigation ul li a.active {
+      text-shadow: 0 0 10px var(--black), 0 0 20px var(--black);
+      -webkit-animation: lightson 3s ease infinite;
+      animation: lightson 3s ease infinite; }
   .dark h3 {
-    cursor: pointer;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
+    -webkit-animation: lightson 3s ease;
+    animation: lightson 3s ease; }
     .dark h3:hover {
       text-shadow: 0 0 10px var(--black), 0 0 20px var(--black); }
   .dark .title h2 {
@@ -291,8 +319,21 @@
     .dark section a span {
       position: absolute;
       display: block; }
-  .dark section.banner .playground .block span:hover {
-    text-shadow: 0 0 10px #01f9c6; }
+  .dark section.banner .playground .block span.animate {
+    top: 0;
+    opacity: 1;
+    color: var(--black); }
+    .dark section.banner .playground .block span.animate:hover {
+      color: var(#01f9c6);
+      -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8);
+      -webkit-transition: 0s color, 0.1s -webkit-transform;
+      transition: 0s color, 0.1s -webkit-transform;
+      -o-transition: 0.1s transform, 0s color;
+      transition: 0.1s transform, 0s color;
+      transition: 0.1s transform, 0s color, 0.1s -webkit-transform;
+      text-shadow: 0 0 10px #01f9c6; }
   .dark section.banner .content ul.social-media li:nth-child(1) a {
     background: rgba(0, 0, 0, 0.7); }
     .dark section.banner .content ul.social-media li:nth-child(1) a:hover {
@@ -302,9 +343,9 @@
       -webkit-transition: linear 0.5s;
       -o-transition: linear 0.5s;
       transition: linear 0.5s;
-      -webkit-transition-delay: 0.7s;
-      -o-transition-delay: 0.7s;
-      transition-delay: 0.7s; }
+      -webkit-transition-delay: 0.6s;
+      -o-transition-delay: 0.6s;
+      transition-delay: 0.6s; }
       .dark section.banner .content ul.social-media li:nth-child(1) a:hover span:nth-child(1) {
         left: 100%;
         -webkit-transition: 0.3s;
@@ -342,7 +383,11 @@
       background: -webkit-gradient(linear, left top, right top, from(transparent), to(#0ff0fc));
       background: -webkit-linear-gradient(left, transparent, #0ff0fc);
       background: -o-linear-gradient(left, transparent, #0ff0fc);
-      background: linear-gradient(90deg, transparent, #0ff0fc); }
+      background: linear-gradient(90deg, transparent, #0ff0fc);
+      -webkit-animation: neontop 1s;
+      animation: neontop 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(1) a span:nth-child(2) {
       right: 0;
       top: -100%;
@@ -351,7 +396,11 @@
       background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#0ff0fc));
       background: -webkit-linear-gradient(top, transparent, #0ff0fc);
       background: -o-linear-gradient(top, transparent, #0ff0fc);
-      background: linear-gradient(180deg, transparent, #0ff0fc); }
+      background: linear-gradient(180deg, transparent, #0ff0fc);
+      -webkit-animation: neonright 1s;
+      animation: neonright 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(1) a span:nth-child(3) {
       bottom: 0;
       right: -100%;
@@ -360,7 +409,11 @@
       background: -webkit-gradient(linear, right top, left top, from(transparent), to(#0ff0fc));
       background: -webkit-linear-gradient(right, transparent, #0ff0fc);
       background: -o-linear-gradient(right, transparent, #0ff0fc);
-      background: linear-gradient(270deg, transparent, #0ff0fc); }
+      background: linear-gradient(270deg, transparent, #0ff0fc);
+      -webkit-animation: neonbottom 1s;
+      animation: neonbottom 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(1) a span:nth-child(4) {
       left: 0;
       bottom: -100%;
@@ -369,7 +422,11 @@
       background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#0ff0fc));
       background: -webkit-linear-gradient(bottom, transparent, #0ff0fc);
       background: -o-linear-gradient(bottom, transparent, #0ff0fc);
-      background: linear-gradient(0deg, transparent, #0ff0fc); }
+      background: linear-gradient(0deg, transparent, #0ff0fc);
+      -webkit-animation: neonleft 1s;
+      animation: neonleft 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
   .dark section.banner .content ul.social-media li:nth-child(2) a {
     background: rgba(0, 0, 0, 0.7); }
     .dark section.banner .content ul.social-media li:nth-child(2) a:hover {
@@ -379,9 +436,9 @@
       -webkit-transition: linear 0.5s;
       -o-transition: linear 0.5s;
       transition: linear 0.5s;
-      -webkit-transition-delay: 0.7s;
-      -o-transition-delay: 0.7s;
-      transition-delay: 0.7s; }
+      -webkit-transition-delay: 0.6s;
+      -o-transition-delay: 0.6s;
+      transition-delay: 0.6s; }
       .dark section.banner .content ul.social-media li:nth-child(2) a:hover span:nth-child(1) {
         left: 100%;
         -webkit-transition: 0.3s;
@@ -419,7 +476,11 @@
       background: -webkit-gradient(linear, left top, right top, from(transparent), to(#bc13fe));
       background: -webkit-linear-gradient(left, transparent, #bc13fe);
       background: -o-linear-gradient(left, transparent, #bc13fe);
-      background: linear-gradient(90deg, transparent, #bc13fe); }
+      background: linear-gradient(90deg, transparent, #bc13fe);
+      -webkit-animation: neontop 1s;
+      animation: neontop 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(2) a span:nth-child(2) {
       right: 0;
       top: -100%;
@@ -428,7 +489,11 @@
       background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#bc13fe));
       background: -webkit-linear-gradient(top, transparent, #bc13fe);
       background: -o-linear-gradient(top, transparent, #bc13fe);
-      background: linear-gradient(180deg, transparent, #bc13fe); }
+      background: linear-gradient(180deg, transparent, #bc13fe);
+      -webkit-animation: neonright 1s;
+      animation: neonright 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(2) a span:nth-child(3) {
       bottom: 0;
       right: -100%;
@@ -437,7 +502,11 @@
       background: -webkit-gradient(linear, right top, left top, from(transparent), to(#bc13fe));
       background: -webkit-linear-gradient(right, transparent, #bc13fe);
       background: -o-linear-gradient(right, transparent, #bc13fe);
-      background: linear-gradient(270deg, transparent, #bc13fe); }
+      background: linear-gradient(270deg, transparent, #bc13fe);
+      -webkit-animation: neonbottom 1s;
+      animation: neonbottom 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(2) a span:nth-child(4) {
       left: 0;
       bottom: -100%;
@@ -446,7 +515,11 @@
       background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#bc13fe));
       background: -webkit-linear-gradient(bottom, transparent, #bc13fe);
       background: -o-linear-gradient(bottom, transparent, #bc13fe);
-      background: linear-gradient(0deg, transparent, #bc13fe); }
+      background: linear-gradient(0deg, transparent, #bc13fe);
+      -webkit-animation: neonleft 1s;
+      animation: neonleft 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
   .dark section.banner .content ul.social-media li:nth-child(3) a {
     background: rgba(0, 0, 0, 0.7); }
     .dark section.banner .content ul.social-media li:nth-child(3) a:hover {
@@ -456,9 +529,9 @@
       -webkit-transition: linear 0.5s;
       -o-transition: linear 0.5s;
       transition: linear 0.5s;
-      -webkit-transition-delay: 0.7s;
-      -o-transition-delay: 0.7s;
-      transition-delay: 0.7s; }
+      -webkit-transition-delay: 0.6s;
+      -o-transition-delay: 0.6s;
+      transition-delay: 0.6s; }
       .dark section.banner .content ul.social-media li:nth-child(3) a:hover span:nth-child(1) {
         left: 100%;
         -webkit-transition: 0.3s;
@@ -496,7 +569,11 @@
       background: -webkit-gradient(linear, left top, right top, from(transparent), to(#007ab9));
       background: -webkit-linear-gradient(left, transparent, #007ab9);
       background: -o-linear-gradient(left, transparent, #007ab9);
-      background: linear-gradient(90deg, transparent, #007ab9); }
+      background: linear-gradient(90deg, transparent, #007ab9);
+      -webkit-animation: neontop 1s;
+      animation: neontop 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(3) a span:nth-child(2) {
       right: 0;
       top: -100%;
@@ -505,7 +582,11 @@
       background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#007ab9));
       background: -webkit-linear-gradient(top, transparent, #007ab9);
       background: -o-linear-gradient(top, transparent, #007ab9);
-      background: linear-gradient(180deg, transparent, #007ab9); }
+      background: linear-gradient(180deg, transparent, #007ab9);
+      -webkit-animation: neonright 1s;
+      animation: neonright 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(3) a span:nth-child(3) {
       bottom: 0;
       right: -100%;
@@ -514,7 +595,11 @@
       background: -webkit-gradient(linear, right top, left top, from(transparent), to(#007ab9));
       background: -webkit-linear-gradient(right, transparent, #007ab9);
       background: -o-linear-gradient(right, transparent, #007ab9);
-      background: linear-gradient(270deg, transparent, #007ab9); }
+      background: linear-gradient(270deg, transparent, #007ab9);
+      -webkit-animation: neonbottom 1s;
+      animation: neonbottom 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
     .dark section.banner .content ul.social-media li:nth-child(3) a span:nth-child(4) {
       left: 0;
       bottom: -100%;
@@ -523,7 +608,11 @@
       background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#007ab9));
       background: -webkit-linear-gradient(bottom, transparent, #007ab9);
       background: -o-linear-gradient(bottom, transparent, #007ab9);
-      background: linear-gradient(0deg, transparent, #007ab9); }
+      background: linear-gradient(0deg, transparent, #007ab9);
+      -webkit-animation: neonleft 1s;
+      animation: neonleft 1s;
+      -webkit-animation-iteration-count: 3;
+      animation-iteration-count: 3; }
   .dark section.services .content .wrap {
     border: 1px solid rgba(0, 0, 0, 0.5);
     position: relative;
@@ -635,7 +724,15 @@ h3 {
   font-size: 1.4em;
   color: var(--black);
   letter-spacing: 2px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
+  top: 100px;
+  opacity: 0; }
+  h3.animate {
+    top: 0px;
+    opacity: 1; }
 
 p {
   color: #777; }
@@ -652,10 +749,18 @@ p {
   text-decoration: none;
   -webkit-transition: ease 0.3s;
   -o-transition: ease 0.3s;
-  transition: ease 0.3s; }
+  transition: ease 0.3s;
+  top: 100px;
+  opacity: 1;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s; }
   .btn:hover {
     background: var(--black2);
     color: #fff; }
+  .btn.animate {
+    top: 0px;
+    opacity: 1; }
 
 .title {
   width: 100%;
@@ -760,7 +865,15 @@ p {
     .navigation ul li {
       position: relative;
       width: 100%;
-      list-style: none; }
+      list-style: none;
+      left: -50px;
+      -webkit-transition: all ease 1s;
+      -o-transition: all ease 1s;
+      transition: all ease 1s;
+      opacity: 0; }
+      .navigation ul li.animate {
+        left: 0px;
+        opacity: 1; }
       .navigation ul li a {
         position: relative;
         display: block;
@@ -778,6 +891,8 @@ p {
         opacity: 0.5;
         cursor: pointer; }
         .navigation ul li a:hover {
+          opacity: 1; }
+        .navigation ul li a.active {
           opacity: 1; }
 
 .page-content {
@@ -920,7 +1035,9 @@ section {
         position: relative;
         font-size: 2.5vw;
         font-weight: bold;
-        color: var(--black);
+        color: var(--playground);
+        top: 100px;
+        opacity: 0;
         letter-spacing: -3px;
         display: inline-block;
         cursor: pointer;
@@ -942,16 +1059,6 @@ section {
           section.banner .playground .block span {
             letter-spacing: 0px;
             font-size: 4vw; } }
-        section.banner .playground .block span:hover {
-          color: var(--playground);
-          -webkit-transform: scale(0.8);
-          -ms-transform: scale(0.8);
-          transform: scale(0.8);
-          -webkit-transition: 0s color, 0.1s -webkit-transform;
-          transition: 0s color, 0.1s -webkit-transform;
-          -o-transition: 0.1s transform, 0s color;
-          transition: 0.1s transform, 0s color;
-          transition: 0.1s transform, 0s color, 0.1s -webkit-transform; }
         section.banner .playground .block span.spacing {
           letter-spacing: 2px;
           padding: 0 5px; }
@@ -959,9 +1066,36 @@ section {
             section.banner .playground .block span.spacing {
               letter-spacing: 0px;
               padding: 0 2px; } }
-      @media (max-width: 992px) {
-        section.banner .playground p {
-          text-align: center; } }
+        section.banner .playground .block span.animate {
+          top: 0;
+          opacity: 1;
+          color: var(--black); }
+          section.banner .playground .block span.animate:hover {
+            color: var(--playground);
+            -webkit-transform: scale(0.8);
+            -ms-transform: scale(0.8);
+            transform: scale(0.8);
+            -webkit-transition: 0s color, 0.1s -webkit-transform;
+            transition: 0s color, 0.1s -webkit-transform;
+            -o-transition: 0.1s transform, 0s color;
+            transition: 0.1s transform, 0s color;
+            transition: 0.1s transform, 0s color, 0.1s -webkit-transform; }
+      section.banner .playground p {
+        position: relative;
+        top: 100px;
+        opacity: 0;
+        -webkit-transition: ease 1s;
+        -o-transition: ease 1s;
+        transition: ease 1s;
+        -webkit-transition-delay: 4s;
+        -o-transition-delay: 4s;
+        transition-delay: 4s; }
+        section.banner .playground p.animate {
+          top: 0;
+          opacity: 1; }
+        @media (max-width: 992px) {
+          section.banner .playground p {
+            text-align: center; } }
     section.banner .content {
       width: 49%;
       display: -webkit-box;
@@ -985,9 +1119,20 @@ section {
         position: relative;
         width: 400px;
         height: 400px;
+        right: -200px;
+        opacity: 0;
         overflow: hidden;
         border-radius: 50%;
-        margin-bottom: 50px; }
+        margin-bottom: 50px;
+        -webkit-transition: all ease 1s;
+        -o-transition: all ease 1s;
+        transition: all ease 1s;
+        -webkit-transition-delay: 1s;
+        -o-transition-delay: 1s;
+        transition-delay: 1s; }
+        section.banner .content .img.animate {
+          right: 0px;
+          opacity: 1; }
         @media (max-width: 992px) {
           section.banner .content .img {
             width: 300px;
@@ -1028,12 +1173,30 @@ section {
             align-items: center;
             text-decoration: none;
             color: var(--black);
-            font-size: 1.2em; }
+            font-size: 1.2em;
+            position: relative;
+            top: 100px;
+            opacity: 0;
+            -webkit-transition: 1s ease;
+            -o-transition: 1s ease;
+            transition: 1s ease; }
             section.banner .content ul.social-media li a:hover {
               background: var(--black2);
               color: #fff; }
+            section.banner .content ul.social-media li a.animate {
+              top: 0px;
+              opacity: 1; }
   section.about {
     background: var(--background); }
+    section.about .title h2 {
+      top: 100px;
+      opacity: 0;
+      -webkit-transition: 1s ease;
+      -o-transition: 1s ease;
+      transition: 1s ease; }
+      section.about .title h2.animate {
+        top: 0;
+        opacity: 1; }
     section.about .content {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1063,7 +1226,16 @@ section {
         align-items: center;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        justify-content: center; }
+        justify-content: center;
+        position: relative;
+        right: 200px;
+        opacity: 0;
+        -webkit-transition: 1s ease;
+        -o-transition: 1s ease;
+        transition: 1s ease; }
+        section.about .content .textBox.animate {
+          right: 0px;
+          opacity: 1; }
         @media (max-width: 767px) {
           section.about .content .textBox {
             width: 100%;
@@ -1072,7 +1244,16 @@ section {
         section.about .content .textBox .title {
           padding-top: 30px; }
       section.about .content .img {
-        margin-left: 40px; }
+        position: relative;
+        margin-left: 40px;
+        left: 150px;
+        -webkit-transition: 2s ease;
+        -o-transition: 2s ease;
+        transition: 2s ease;
+        opacity: 0; }
+        section.about .content .img.animate {
+          opacity: 1;
+          left: 0; }
         @media (max-width: 767px) {
           section.about .content .img {
             margin-left: 0px;
@@ -1081,6 +1262,15 @@ section {
           max-width: 100%; }
   section.services {
     background: var(--background); }
+    section.services .title h2 {
+      top: 100px;
+      opacity: 0;
+      -webkit-transition: 1s ease;
+      -o-transition: 1s ease;
+      transition: 1s ease; }
+      section.services .title h2.animate {
+        top: 0px;
+        opacity: 1; }
     section.services .content {
       display: -ms-grid;
       display: grid;
@@ -1112,11 +1302,17 @@ section {
         flex-direction: column;
         -webkit-transition: all ease 0.5s;
         -o-transition: all ease 0.5s;
-        transition: all ease 0.5s; }
+        transition: all ease 0.5s;
+        position: relative;
+        opacity: 0;
+        top: 100px; }
+        section.services .content .wrap.animate {
+          opacity: 1;
+          top: 0; }
         section.services .content .wrap:hover {
-          -webkit-transition: all ease 0.5s;
-          -o-transition: all ease 0.5s;
-          transition: all ease 0.5s;
+          -webkit-transition: all ease 1s;
+          -o-transition: all ease 1s;
+          transition: all ease 1s;
           background: rgba(0, 0, 0, 0.5); }
           section.services .content .wrap:hover h2, section.services .content .wrap:hover p {
             color: white; }
@@ -1135,6 +1331,15 @@ section {
           text-align: center; }
   section.projects {
     background: var(--background); }
+    section.projects .title h2 {
+      opacity: 0;
+      bottom: 100px;
+      -webkit-transition: all ease 1s;
+      -o-transition: all ease 1s;
+      transition: all ease 1s; }
+      section.projects .title h2.animate {
+        opacity: 1;
+        bottom: 0; }
     section.projects .content {
       display: -ms-grid;
       display: grid;
@@ -1154,7 +1359,18 @@ section {
         position: relative;
         width: 100%;
         height: 400px;
-        overflow: hidden; }
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transition: all ease 1s;
+        -o-transition: all ease 1s;
+        transition: all ease 1s; }
+        section.projects .content .projects-wrap:nth-child(even) {
+          top: 100px; }
+        section.projects .content .projects-wrap:nth-child(odd) {
+          top: -100px; }
+        section.projects .content .projects-wrap.animate {
+          top: 0px;
+          opacity: 1; }
         section.projects .content .projects-wrap:hover .img {
           -webkit-transform: translateY(-100%);
           -ms-transform: translateY(-100%);
@@ -1224,11 +1440,28 @@ section {
     @media (max-width: 767px) {
       section.contact {
         padding-bottom: 50px; } }
+    section.contact .title h2 {
+      opacity: 0;
+      top: -100px;
+      -webkit-transition: all ease 1s;
+      -o-transition: all ease 1s;
+      transition: all ease 1s; }
+      section.contact .title h2.animate {
+        opacity: 1;
+        top: 0px; }
     section.contact .contact-form {
       position: relative;
       width: 100%;
       max-width: 800px;
-      margin-top: 20px; }
+      margin-top: 20px;
+      top: 150px;
+      opacity: 0;
+      -webkit-transition: all ease 1s;
+      -o-transition: all ease 1s;
+      transition: all ease 1s; }
+      section.contact .contact-form.animate {
+        top: 0;
+        opacity: 1; }
       section.contact .contact-form .row {
         width: 100%;
         display: -ms-grid;

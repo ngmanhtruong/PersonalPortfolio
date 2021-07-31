@@ -1,0 +1,16 @@
+@keyframes flyInSpans{
+    0%{
+        top: 100px;
+        opacity: 0;
+        color: var(--playground);
+    }
+    60%{
+        top: -10px;
+        opacity: 1;
+    }
+    100%{
+        top: 0px;
+        opacity: 1;
+        color: var(--black);
+    }
+}
