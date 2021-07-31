@@ -466,11 +466,11 @@
 
             new ScrollMagic.Scene({
                 triggerElement: "#services",
-                triggerHook: 0.6, // show, when scrolled 40% into view
+                triggerHook: 0.7, // show, when scrolled 40% into view
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle(".dark section.services .content .wrap:nth-child(1), .dark section.services .content .wrap:nth-child(2), .dark section.services .content .wrap:nth-child(3)", "animate") // add class to reveal
+            .setClassToggle("section.services .content .wrap:nth-child(1), section.services .content .wrap:nth-child(2), section.services .content .wrap:nth-child(3)", "animate") // add class to reveal
             .addTo(controller);
 
             new ScrollMagic.Scene({
@@ -479,7 +479,7 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle(".dark section.services .content .wrap:nth-child(4), .dark section.services .content .wrap:nth-child(5), .dark section.services .content .wrap:nth-child(6)", "animate") // add class to reveal
+            .setClassToggle("section.services .content .wrap:nth-child(4), section.services .content .wrap:nth-child(5), section.services .content .wrap:nth-child(6)", "animate") // add class to reveal
             .addTo(controller);
 
             //PROJECTS

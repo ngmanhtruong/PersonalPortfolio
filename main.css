@@ -1317,7 +1317,10 @@ section {
         transition: all ease 0.5s;
         position: relative;
         opacity: 0;
-        top: 100px; }
+        top: 100px;
+        -webkit-transition: all ease 1s;
+        -o-transition: all ease 1s;
+        transition: all ease 1s; }
         section.services .content .wrap.animate {
           opacity: 1;
           top: 0; }

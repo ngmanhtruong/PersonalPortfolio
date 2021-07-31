@@ -1122,6 +1122,7 @@ section{
                 position: relative;
                 opacity: 0;
                 top: 100px;
+                transition: all ease 1s;
                 &.animate{
                     opacity: 1;
                     top: 0;
