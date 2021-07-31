@@ -162,7 +162,9 @@
         }
     }
     h3{
-        animation: lightson 3s ease;
+        &.animate{
+            animation: lightson 3s ease;
+        }
         &:hover{
             text-shadow: 0 0 10px var(--black), 0 0 20px var(--black);
         }
@@ -467,6 +469,20 @@
                 }
             }
         }
+        &.about{
+            .title{
+                h2{
+                    &.animate{
+                        animation: lightson 3s ease;
+                    }
+                }
+            }
+        }
+        &.services .title h2{
+            &.animate{
+                animation: lightson 3s ease;
+            }
+        }
         &.services .content .wrap{
             border: 1px solid rgba(0,0,0,0.5);
             position: relative;
@@ -566,6 +582,11 @@
                 }
             }
         }
+        &.contact .title h2{
+            &.animate{
+                animation: lightson 3s ease;
+            }
+        }
         &.contact .contact-form .row2 input[type="submit"]{
             background: rgba(0,0,0,0.7);
             color: white;
@@ -574,6 +595,11 @@
                 box-shadow: 0 0 10px #01f9c6, 0 0 20px #01f9c6;
                 transition: linear 0.5s;
                 color: var(--white);
+            }
+        }
+        &.projects .title h2{
+            &.animate{
+                animation: lightson 3s ease;
             }
         }
         &.projects .content .projects-wrap .text h3{

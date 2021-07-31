@@ -240,11 +240,11 @@
       text-shadow: 0 0 10px var(--black), 0 0 20px var(--black);
       -webkit-animation: lightson 3s ease infinite;
       animation: lightson 3s ease infinite; }
-  .dark h3 {
+  .dark h3.animate {
     -webkit-animation: lightson 3s ease;
     animation: lightson 3s ease; }
-    .dark h3:hover {
-      text-shadow: 0 0 10px var(--black), 0 0 20px var(--black); }
+  .dark h3:hover {
+    text-shadow: 0 0 10px var(--black), 0 0 20px var(--black); }
   .dark .title h2 {
     cursor: pointer;
     -webkit-transition: 0.5s;
@@ -613,6 +613,12 @@
       animation: neonleft 1s;
       -webkit-animation-iteration-count: 3;
       animation-iteration-count: 3; }
+  .dark section.about .title h2.animate {
+    -webkit-animation: lightson 3s ease;
+    animation: lightson 3s ease; }
+  .dark section.services .title h2.animate {
+    -webkit-animation: lightson 3s ease;
+    animation: lightson 3s ease; }
   .dark section.services .content .wrap {
     border: 1px solid rgba(0, 0, 0, 0.5);
     position: relative;
@@ -705,6 +711,9 @@
         filter: invert(1); }
       .dark section.services .content .wrap:nth-child(6):hover h2, .dark section.services .content .wrap:nth-child(6):hover p {
         color: var(--black2); }
+  .dark section.contact .title h2.animate {
+    -webkit-animation: lightson 3s ease;
+    animation: lightson 3s ease; }
   .dark section.contact .contact-form .row2 input[type="submit"] {
     background: rgba(0, 0, 0, 0.7);
     color: white; }
@@ -716,6 +725,9 @@
       -o-transition: linear 0.5s;
       transition: linear 0.5s;
       color: var(--white); }
+  .dark section.projects .title h2.animate {
+    -webkit-animation: lightson 3s ease;
+    animation: lightson 3s ease; }
   .dark section.projects .content .projects-wrap .text h3 {
     color: rgba(0, 0, 0, 0.7); }
 
