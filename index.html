@@ -1,130 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" 
-    integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" 
-    crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+        integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="css/main.css">
     <title>Truong's Portfolio</title>
     <script src="js/jquery-3.6.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js" 
-    integrity="sha512-UgS0SVyy/0fZ0i48Rr7gKpnP+Jio3oC7M4XaKP3BJUB/guN6Zr4BjU0Hsle0ey2HJvPLHE5YQCXTDrx27Lhe7A==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js"
+        integrity="sha512-UgS0SVyy/0fZ0i48Rr7gKpnP+Jio3oC7M4XaKP3BJUB/guN6Zr4BjU0Hsle0ey2HJvPLHE5YQCXTDrx27Lhe7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('HqtPs4Cf4L3KM6cjz');
+        })();
+    </script>
 </head>
-<body onunload="closeFunction()">
+
+<body onunload="closeFunction()" class="dark">
     <!-- LOADER -->
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
     <!-- WRAP PAGE-->
-    <div class = "page-content">
-        <div class = "navigation">
+    <div class="page-content">
+        <div class="navigation">
             <ul>
-                <li><a id = "scrollBanner" onclick="toggleMenu()" data-section ="banner">Home</a></li>
-                <li><a id = "scrollAbout" onclick="toggleMenu()" data-section ="about">About</a></li>
-                <li><a id = "scrollServices" onclick="toggleMenu()" data-section ="services">Services</a></li>
-                <li><a id = "scrollProjects" onclick="toggleMenu()" data-section ="projects">Projects</a></li>
+                <li><a id="scrollBanner" onclick="toggleMenu()" data-section="banner">Home</a></li>
+                <li><a id="scrollAbout" onclick="toggleMenu()" data-section="about">About</a></li>
+                <li><a id="scrollServices" onclick="toggleMenu()" data-section="services">Services</a></li>
+                <li><a id="scrollProjects" onclick="toggleMenu()" data-section="projects">Projects</a></li>
                 <!-- <li><a href = "#">Certifications</a></li> -->
-                <li><a id = "scrollContact" onclick="toggleMenu()" data-section ="contact">Contact</a></li>
+                <li><a id="scrollContact" onclick="toggleMenu()" data-section="contact">Contact</a></li>
             </ul>
-            <div class ="theme-switch">
+            <div class="theme-switch">
             </div>
         </div>
-        <div class = "main">
-            <div class = "topbar">
-                <a href="#" class = "logo">Portfolio</a>
-                <div class = "toggle">
+        <div class="main">
+            <div class="topbar">
+                <a href="#" class="logo">Portfolio</a>
+                <div class="toggle">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
             <!-- BANNER -->
-            <section class = "banner" id="banner">
-                <div class = "playground">
-                    <div class = "block block1">
+            <section class="banner" id="banner">
+                <div class="playground">
+                    <div class="block block1">
                         <span>H</span><span>I</span><span>,</span>
                     </div>
-                    <div class = "block block2">
-                        <span>I</span><span>'</span><span>M</span><span class = "spacing"> </span>
-                        <span> T</span><span>R</span><span>U</span><span>O</span><span>N</span><span>G</span><span>,</span>
+                    <div class="block block2">
+                        <span>M</span><span>A</span><span>T</span><span>T</span><span>H</span><span>E</span><span>W</span>
+                        <span>'</span><span>S</span>
+                        <span class="spacing"> </span>
+                        <span>H</span><span>E</span><span>R</span><span>E</span>
                     </div>
-                    <div class = "block block3">
-                        <span>I</span><span>T</span><span>'</span><span>S</span><span class = "spacing"> </span>
-                        <span> N</span><span>I</span><span>C</span><span>E</span><span class = "spacing"> </span>
-                        <span> T</span><span>O</span><span> </span><span class = "spacing"> </span>
-                        <span> H</span><span>A</span><span>V</span><span>E</span><span class = "spacing"> </span>
-                        <span> Y</span><span>O</span><span>U</span><span class = "spacing"> </span>
-                        <span> H</span><span>E</span><span>R</span><span>E</span><span>!</span>
+                    <div class="block block3">
+                        <!-- <span>I</span><span>T</span><span>'</span><span>S</span><span class="spacing"> </span> -->
+                        <span>G</span><span>R</span><span>E</span><span>A</span><span>T</span><span class="spacing">
+                        </span>
+                        <span>T</span><span>O</span><span></span><span class="spacing"> </span>
+                        <span>S</span><span>E</span><span>E</span><span class="spacing"> </span>
+                        <span> Y</span><span>O</span><span>U</span><span class="spacing"> </span>
+                        <span>!</span>
                     </div>
-                    <p>Front End Website Developer | Junior</p>
+                    <p style="margin-top: 20px;" class="title">Software Engineer | Learner | Builder</p>
 
                 </div>
-                <div class = "content">
-                    <div class = "img">
-                        <img src="images/profile.jpg" alt="profile-picture">
+                <div class="content">
+                    <div class="img">
+                        <img src="images/profile.jpeg" alt="profile-picture">
                     </div>
                     <h3>Nguyen Manh Truong</h3>
-                    <a href="cv/cv.html" target="_blank" class = "btn">
+                    <a href="cv/cv.pdf" target="_blank" class="btn">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
                         My CV
                     </a>
-                    <ul class = "social-media">
-                        <li><a href = "https://www.facebook.com/testarudo.nino" target="_blank">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i class="fab fa-facebook"></i></a></li>
-                        <li><a href = "https://www.linkedin.com/in/ngmanhtruong/" target="_blank">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href = "https://github.com/ngmanhtruong" target="_blank">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i class="fab fa-github"></i></a></li>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/myztict" target="_blank">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/ngmanhtruong/" target="_blank">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://github.com/ngmanhtruong" target="_blank">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fab fa-github"></i></a></li>
                     </ul>
                 </div>
             </section>
 
             <!-- ABOUT ME -->
-            <section class = "about adjust" id = "about">
-                <div class = "title">
+            <section class="about adjust" id="about">
+                <div class="title">
                     <h2>About Me</h2>
                 </div>
-                <div class = "content">
-                    <div class = "textBox">
-                        <p>I am a hardworking, ambitious and eager to learn individual. I have 3 months working for <b>Kyanon Digital</b> as an Intern, 3 months in teaching programming at <b>Teky Academy</b>, <b>2 years in military</b> which will help me a lots to work under the pressure.
-                        <br><br>I'm seeking for a <b>Junior</b> position in the industry in which I can put into practice for my knowledge and experience, ultimately benefiting the operations of the organization that I work for.</p>
-                        <div class ="title">
+                <div class="content">
+                    <div class="textBox">
+                        <p>I am a versatile and skilled <b>software engineer</b> with a passion for creating visually
+                            stunning, userfriendly and intuitive interfaces. <br /><br />My expertise in <b>React</b>,
+                            <b>Angular</b>, and
+                            other JavaScript
+                            frameworks, as well as my knowledge of backend coding like <b>NodeJS</b> and
+                            blockchain like <b>Solidity</b>,
+                            enables me to deliver
+                            high-quality, cross-functional projects. <br /><br />I am always keeping an eye on the
+                            latest
+                            technologies and best
+                            practices to bring innovative solutions to my clients.
+                        </p>
+                        <div class="title">
                             <h2>My Objective</h2>
-                            <p></p>
+                            <p>To become a <b>Frontend Master</b>, proficience in both web application and mobile
+                                application.</p>
                         </div>
                     </div>
-                    <div class = "img">
+                    <div class="img">
                         <img src="images/ohshoot.jpg" alt="about-me-picture">
                     </div>
                 </div>
             </section>
 
             <!-- SERVICES -->
-            <section class = "services adjust" id = "services">
-                <div class = "title">
+            <section class="services adjust" id="services">
+                <div class="title">
                     <h2>My Skills</h2>
                     <p></p>
                 </div>
-                <div class = "content">
-                    <div class = "wrap">
+                <div class="content">
+                    <div class="wrap">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -133,7 +156,7 @@
                         <h2>HTML 5</h2>
                         <p>Up-to-date structure for your website with the newest <b>HTML 5</b>.</p>
                     </div>
-                    <div class = "wrap">
+                    <div class="wrap">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -142,7 +165,7 @@
                         <h2>CSS 3</h2>
                         <p>Styling your website layout, color and responsive for all devices with <b>CSS 3</b>.</p>
                     </div>
-                    <div class = "wrap">
+                    <div class="wrap">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -151,7 +174,7 @@
                         <h2>Bootstrap 5</h2>
                         <p>Up-to-date one of the largest css frameworks</p>
                     </div>
-                    <div class = "wrap">
+                    <div class="wrap">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -160,118 +183,183 @@
                         <h2>Javascript</h2>
                         <p>Using <b>Javascript</b> to make your web pages interactive, improve user experience.</p>
                     </div>
-                    <div class = "wrap">
+                    <div class="wrap">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
                         <img src="images/jquery.png" alt="javascript">
                         <h2>JQuery</h2>
-                        <p>Making your website easier to handle, manipulate, animate with the most popular <b>Javascript</b> library.</p>
+                        <p>Making your website easier to handle, manipulate, animate with the most popular
+                            <b>Javascript</b> library.
+                        </p>
                     </div>
-                    <div class = "wrap">
+                    <div class="wrap">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
                         <img src="images/react.png" alt="reactjs">
                         <h2>React JS</h2>
-                        <p>Handling the view layer, building modern applications and can be used for both web and mobile applications.</p>
+                        <p>Handling the view layer, building modern applications and can be used for both web and mobile
+                            applications.</p>
+                    </div>
+                    <div class="wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <img src="images/angular.png" alt="angular">
+                        <h2>Angular</h2>
+                        <p>Hands-on with angular frameworks in Bosch projects.</p>
+                    </div>
+                    <div class="wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <img src="images/nodejs.png" alt="nodejs">
+                        <h2>Node JS</h2>
+                        <p>Build restfulAPI backend with Node JS.</p>
+                    </div>
+                    <div class="wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <img src="images/cshaft.png" alt="c#">
+                        <h2>C#</h2>
+                        <p>Build Unity application for Raramuri with C#.</p>
                     </div>
                 </div>
             </section>
 
             <!-- PROJECTS -->
-            <section class = "projects adjust" id = "projects">
-                <div class = "title">
+            <section class="projects adjust" id="projects">
+                <div class="title">
                     <h2>Recent Projects</h2>
                     <p></p>
                 </div>
-                <div class = "content">
-                    <div class = "projects-wrap">
-                        <div class= "img">
-                            <img src="images/project1.jpg" alt="project1">
+                <div class="content">
+                    <div class="projects-wrap">
+                        <div class="img">
+                            <img src="images/project1.png" alt="raramuri">
                         </div>
-                        <div class = "text">
-                            <h3>Project 01</h3>
-                        </div>
-                    </div>
-                    <div class = "projects-wrap">
-                        <div class= "img">
-                            <img src="images/project2.jpg" alt="project2">
-                        </div>
-                        <div class = "text">
-                            <h3>Project 02</h3>
+                        <div class="text">
+                            <h3>Raramuri</h3>
+                            <p>Running reimagined</p>
                         </div>
                     </div>
-                    <div class = "projects-wrap">
-                        <div class= "img">
-                            <img src="images/project3.jpg" alt="project3">
+                    <div class="projects-wrap">
+                        <div class="img">
+                            <img src="images/project2.png" alt="agoran">
                         </div>
-                        <div class = "text">
-                            <h3>Project 03</h3>
+                        <div class="text">
+                            <h3>Agoran</h3>
+                            <p>NFT Marketplace</p>
                         </div>
                     </div>
-                    <div class = "projects-wrap">
-                        <div class= "img">
+                    <div class="projects-wrap">
+                        <div class="img">
+                            <img src="images/project3.png" alt="idamura">
+                        </div>
+                        <div class="text">
+                            <h3>Idamura</h3>
+                            <p>Find your waifus</p>
+                        </div>
+                    </div>
+                    <div class="projects-wrap">
+                        <div class="img">
                             <img src="images/project4.jpg" alt="project4">
                         </div>
-                        <div class = "text">
+                        <div class="text">
                             <h3>Project 04</h3>
+                            <p>Not yet integrate</p>
                         </div>
                     </div>
-                    <div class = "projects-wrap">
-                        <div class= "img">
+                    <div class="projects-wrap">
+                        <div class="img">
                             <img src="images/project5.jpg" alt="project5">
                         </div>
-                        <div class = "text">
+                        <div class="text">
                             <h3>Project 05</h3>
+                            <p>Not yet integrate</p>
                         </div>
                     </div>
-                    <div class = "projects-wrap">
-                        <div class= "img">
+                    <div class="projects-wrap">
+                        <div class="img">
                             <img src="images/project6.jpg" alt="project6">
                         </div>
-                        <div class = "text">
+                        <div class="text">
                             <h3>Project 06</h3>
+                            <p>Not yet integrate</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- CONTACT-->
-            <section class = "contact adjust" id = "contact">
-                <div class = "title">
+            <section class="contact adjust" id="contact">
+                <div class="title">
                     <h2>Contact Me</h2>
                     <p></p>
                 </div>
-                <div class = "contact-form">
-                    <div class = "row">
-                        <input type="text" name = "firstName" placeholder="First Name">
-                        <input type="text" name = "lastName" placeholder="Last Name">
+                <form class="contact-form" id="contact-form">
+                    <div class="row">
+                        <input type="text" name="form_firstname" id="form_firstname" placeholder="First Name" required>
+                        <input type="text" name="form_lastname" id="form_lastname" placeholder="Last Name" required>
                     </div>
-                    <div class = "row">
-                        <input type="text" name = "email" placeholder="Email Address">
-                        <input type="text" name = "mobile" placeholder="Mobile No.">
+                    <div class="row">
+                        <input type="text" name="form_email" id="form_email" placeholder="Email Address" required>
+                        <input type="number" name="form_mobile" id="form_mobile" placeholder="Mobile No.">
                     </div>
-                    <div class = "row2">
-                        <textarea name="" placeholder="Message" id="textMail"></textarea>
+                    <div class="row2">
+                        <textarea name="form_message" placeholder="Message" id="form_message" required></textarea>
                     </div>
-                    <div class = "row2">
+                    <div class="row2">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" id="form_submit">
                     </div>
-                </div>
+                </form>
             </section>
         </div>
     </div>
     <script>
-        window.onload = function(e){
+        document.querySelector("#form_submit").addEventListener("click", function (event) {
+            event.preventDefault();
+            // Check if the user is allowed to submit a message
+            const lastMessageTime = localStorage.getItem('lastMessageTime');
+            const currentTime = new Date().getTime();
+            if (!lastMessageTime || currentTime - lastMessageTime > 5 * 60 * 1000) {
+                // User is allowed to submit a message
+                // Save the current time to localStorage
+                localStorage.setItem('lastMessageTime', currentTime);
+                // these IDs from  previous steps
+                emailjs.sendForm('service_lurkfwg', 'template_w0klpic', this)
+                    .then(function () {
+                        alert("Thank you! I have received your message.")
+                        console.log('SUCCESS!');
+                    }, function (error) {
+                        alert("Sorry! There is something wrong with your message.")
+                        console.log('FAILED...', error);
+                    });
+                let submitBtn = document.querySelector("#form_submit");
+                submitBtn.disabled = true;
+            } else {
+                // User is not allowed to submit a message yet
+                // Display an error message
+                console.log('Please wait at least 5 minutes before submitting another message.');
+                alert('Please wait at least 5 minutes before submitting another message.');
+            }
+        }, false);
+    </script>
+    <script>
+        window.onload = function (e) {
             var theme = sessionStorage.getItem('theme');
-            if (theme == 'toggled'){
+            if (theme == 'toggled') {
                 body.classList.add('dark');
             }
             $(".loader-wrapper").fadeOut("slow");
@@ -282,7 +370,7 @@
         let topbar = document.querySelector('.topbar');
         let navigation = document.querySelector('.navigation');
         let main = document.querySelector('.main');
-        toggle.onclick = function(){
+        toggle.onclick = function () {
             toggle.classList.toggle('active');
             topbar.classList.toggle('active');
             navigation.classList.toggle('active');
@@ -290,7 +378,7 @@
 
         }
         //Fix menu responsive for mobile
-        function toggleMenu(){
+        function toggleMenu() {
             let topbar = document.querySelector('.topbar');
             let navigation = document.querySelector('.navigation');
             let main = document.querySelector('.main');
@@ -303,43 +391,43 @@
         let themeSwitch = document.querySelector('.theme-switch');
         let body = document.querySelector('body');
 
-        themeSwitch.onclick = () =>{
+        themeSwitch.onclick = () => {
             body.classList.toggle('dark');
 
-            if (body.classList.contains('dark')){
-                sessionStorage.setItem('theme','toggled');
+            if (body.classList.contains('dark')) {
+                sessionStorage.setItem('theme', 'toggled');
             } else {
-                sessionStorage.setItem('theme','nottoggled');
+                sessionStorage.setItem('theme', 'nottoggled');
             }
         }
 
         //Active on scroll
-        $('.navigation ul li a').click(function(){
+        $('.navigation ul li a').click(function () {
             var target = $(this).data('section');
             $('html, body').animate({
-                scrollTop: $('#'+ target).offset().top
+                scrollTop: $('#' + target).offset().top
             }, 1000);
-		})
+        })
 
-        function animations(){
+        function animations() {
             //ACTIVE NAVIGATION BAR WHEN SCROLL
-            var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: "100%"}});
+            var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: "100%" } });
 
-            new ScrollMagic.Scene({triggerElement: "#banner"})
-                    .setClassToggle("#scrollBanner", "active") // add class toggle
-                    .addTo(controller);
-            new ScrollMagic.Scene({triggerElement: "#about"})
-                    .setClassToggle("#scrollAbout", "active") // add class toggle
-                    .addTo(controller);
-            new ScrollMagic.Scene({triggerElement: "#services"})
-                    .setClassToggle("#scrollServices", "active") // add class toggle
-                    .addTo(controller);
-            new ScrollMagic.Scene({triggerElement: "#projects"})
-                    .setClassToggle("#scrollProjects", "active") // add class toggle
-                    .addTo(controller);
-            new ScrollMagic.Scene({triggerElement: "#contact"})
-                    .setClassToggle("#scrollContact", "active") // add class toggle
-                    .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#banner" })
+                .setClassToggle("#scrollBanner", "active") // add class toggle
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#about" })
+                .setClassToggle("#scrollAbout", "active") // add class toggle
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#services" })
+                .setClassToggle("#scrollServices", "active") // add class toggle
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#projects" })
+                .setClassToggle("#scrollProjects", "active") // add class toggle
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#contact" })
+                .setClassToggle("#scrollContact", "active") // add class toggle
+                .addTo(controller);
 
             //new scroll magic animate
             //PLAYGROUND ANIMATE
@@ -350,13 +438,13 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.banner .playground .block span", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.banner .playground .block span", "animate") // add class to reveal
+                .addTo(controller);
 
             var spans = document.querySelectorAll('section.banner .playground .block span:nth-child(n)');
             var delay = 0.1;
             //HOW TO DISABLE HOVER UNBIND OR OFF ???
-            for (p of spans){
+            for (p of spans) {
                 //console.log(p);
                 //Default delay là 0,1s
                 p.style.setProperty('transition-delay', delay + 's');
@@ -364,11 +452,11 @@
                 //delay cho mỗi chữ sẽ chạy lên nối tiếp nhau sau 0,1s
                 delay = delay + 0.1;
             }
-            setTimeout(function(){
-                for (p of spans){
+            setTimeout(function () {
+                for (p of spans) {
                     p.style.setProperty('transition-delay', '0s');
                 }
-            },4200); //sau khi animation xong thi set transition-delay ve 0s de hover animation hoat dong
+            }, 4200); //sau khi animation xong thi set transition-delay ve 0s de hover animation hoat dong
 
             new ScrollMagic.Scene({
                 triggerElement: ".topbar",
@@ -376,8 +464,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.banner .playground p", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.banner .playground p", "animate") // add class to reveal
+                .addTo(controller);
 
             //NAVIGATION ANIMATE
             new ScrollMagic.Scene({
@@ -386,8 +474,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle(".navigation ul li", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle(".navigation ul li", "animate") // add class to reveal
+                .addTo(controller);
 
             //PROFILE ANIMATE
             new ScrollMagic.Scene({
@@ -396,8 +484,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.banner .content .img", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.banner .content .img", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: ".topbar",
@@ -405,8 +493,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("h3", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("h3", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: ".topbar",
@@ -414,8 +502,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.banner .content a", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.banner .content a", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: ".topbar",
@@ -423,8 +511,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.banner .content ul.social-media li a", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.banner .content ul.social-media li a", "animate") // add class to reveal
+                .addTo(controller);
 
             //ABOUT ME ANIMATION
             new ScrollMagic.Scene({
@@ -433,8 +521,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.about .title h2", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.about .title h2", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: "#about",
@@ -442,8 +530,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle(".textBox", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle(".textBox", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: "#about",
@@ -451,8 +539,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.about .content .img", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.about .content .img", "animate") // add class to reveal
+                .addTo(controller);
 
             //MY SKILLS
             new ScrollMagic.Scene({
@@ -461,8 +549,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.services .title h2", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.services .title h2", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: "#services",
@@ -470,8 +558,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.services .content .wrap:nth-child(1), section.services .content .wrap:nth-child(2), section.services .content .wrap:nth-child(3)", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.services .content .wrap:nth-child(1), section.services .content .wrap:nth-child(2), section.services .content .wrap:nth-child(3)", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: "#services",
@@ -479,8 +567,17 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.services .content .wrap:nth-child(4), section.services .content .wrap:nth-child(5), section.services .content .wrap:nth-child(6)", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.services .content .wrap:nth-child(4), section.services .content .wrap:nth-child(5), section.services .content .wrap:nth-child(6)", "animate") // add class to reveal
+                .addTo(controller);
+
+            new ScrollMagic.Scene({
+                triggerElement: "#services",
+                triggerHook: 0.3, // show, when scrolled 80% into view
+                offset: 50, // move trigger to center of element
+                reverse: false // do once
+            })
+                .setClassToggle("section.services .content .wrap:nth-child(7), section.services .content .wrap:nth-child(8), section.services .content .wrap:nth-child(9)", "animate") // add class to reveal
+                .addTo(controller);
 
             //PROJECTS
             new ScrollMagic.Scene({
@@ -489,8 +586,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.projects .title h2", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.projects .title h2", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: "#projects",
@@ -498,8 +595,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.projects .content .projects-wrap", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.projects .content .projects-wrap", "animate") // add class to reveal
+                .addTo(controller);
 
             //CONTACT ME
             new ScrollMagic.Scene({
@@ -508,8 +605,8 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.contact .title h2", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.contact .title h2", "animate") // add class to reveal
+                .addTo(controller);
 
             new ScrollMagic.Scene({
                 triggerElement: "#contact",
@@ -517,10 +614,11 @@
                 offset: 50, // move trigger to center of element
                 reverse: false // do once
             })
-            .setClassToggle("section.contact .contact-form", "animate") // add class to reveal
-            .addTo(controller);
+                .setClassToggle("section.contact .contact-form", "animate") // add class to reveal
+                .addTo(controller);
         }
 
     </script>
 </body>
+
 </html>
