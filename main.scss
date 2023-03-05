@@ -15,6 +15,25 @@
         @content;
     }
 }
+@mixin mini-desktop{
+    @media(max-width: 1600px){
+        @content;
+    }
+}
+@mixin skill-hovered ($color, $text-color: var(--black2)) {
+    &:hover{
+        background: $color;
+        box-shadow: 0 0 10px $color, 0 0 20px $color;
+        transition: linear 0.5s;
+        color: #333;
+        img{
+            filter: invert(1);
+        }
+        h2, p {
+            color: $text-color;
+        }
+    }
+}
 //KEYFRAMES FOR LOADING SCREEN
 @keyframes loader {
     0% { transform: rotate(0deg);}
@@ -494,92 +513,40 @@
                 img{
                     filter: invert(1);
                 }
-                &:hover{
-                    background: #fc8427;
-                    box-shadow: 0 0 10px #fc8427, 0 0 20px #fc8427;
-                    transition: linear 0.5s;
-                    color: #333;
-                    img{
-                        filter: invert(0);
-                    }
-                    h2, p {
-                        color: var(--black2);
-                    }
-                }
+                @include skill-hovered(#fc8427, var(--black2));
             }
             &:nth-child(2){
-                &:hover{
-                    background: #0ff0fc;
-                    box-shadow: 0 0 10px #0ff0fc, 0 0 20px #0ff0fc;
-                    transition: linear 0.5s;
-                    color: #333;
-                    img{
-                        filter: invert(0);
-                    }
-                    h2, p {
-                        color: var(--black2);
-                    }
-                }
+                @include skill-hovered(#0ff0fc, var(--black2));
                 img{
                     filter: invert(1);
                 }
             }
             &:nth-child(3){
-                &:hover{
-                    background: #8f00f1;
-                    box-shadow: 0 0 10px #8f00f1, 0 0 20px #8f00f1;
-                    transition: linear 0.5s;
-                    color: #333;
-                    img{
-                        filter: invert(0);
-                    }
-                }
+                @include skill-hovered(#8f00f1, white);
                 img{
                     filter: invert(1);
                 }
             }
             &:nth-child(4){
-                &:hover{
-                    background: #fffc00;
-                    box-shadow: 0 0 10px #fffc00, 0 0 20px #fffc00;
-                    transition: linear 0.5s;
-                    color: #333;
-                    img{
-                        filter: invert(0);
-                    }
-                    h2, p {
-                        color: var(--black2);
-                    }
-                }
-                
+                @include skill-hovered(#fffc00, var(--black2));
                 img{
                     filter: invert(1);
                 }
             }
             &:nth-child(5){
-                &:hover{
-                    background: #6600ff;
-                    box-shadow: 0 0 10px #6600ff, 0 0 20px #6600ff;
-                    transition: linear 0.5s;
-                    color: #333;
-                    img{
-                        filter: invert(1);
-                    }
-                }
+                @include skill-hovered(#6600ff, white);
             }
             &:nth-child(6){
-                &:hover{
-                    background: #55ffff;
-                    box-shadow: 0 0 10px #55ffff, 0 0 20px #55ffff;
-                    transition: linear 0.5s;
-                    color: #333;
-                    img{
-                        filter: invert(1);
-                    }
-                    h2, p {
-                        color: var(--black2);
-                    }
-                }
+                @include skill-hovered(#55ffff, var(--black2));
+            }
+            &:nth-child(7){
+                @include skill-hovered(#c3012f, white);
+            }
+            &:nth-child(8){
+                @include skill-hovered(#92c63d, var(--black2));
+            }
+            &:nth-child(9){
+                @include skill-hovered(#fff, var(--black2));
             }
         }
         &.contact .title h2{
@@ -602,13 +569,12 @@
                 animation: lightson 3s ease;
             }
         }
-        &.projects .content .projects-wrap .text h3{
+        &.projects .content .projects-wrap .text h3, &.projects .content .projects-wrap .text p{
             color:rgba(0, 0, 0, 0.7);
         }
     }
     
 }
-
 
 h3{
     position: relative;
@@ -876,8 +842,11 @@ section{
         background: var(--background);
         padding: 200px 0px;
         flex-wrap: wrap;
-        @include tablet{
+        @include mini-desktop{
             padding: 100px 0px;
+        }
+        @include tablet{
+            padding: 50px 0px;
         }
         .playground{
             width: 49%;
@@ -904,12 +873,19 @@ section{
                     user-select: none;
                     white-space: nowrap;
                     transform: scale(1);
-                    @include tablet{
-                        font-size: 5vw;
-                    }
                     @include mobile{
                         letter-spacing: 0px;
                         font-size: 4vw;
+                    }
+                    @include tablet{
+                        font-size: 5vw;
+                        letter-spacing: 1px;
+                    }
+                    @include laptop {
+                        letter-spacing: 1px;
+                    }
+                    @include mini-desktop{
+                        letter-spacing: 1px;
                     }
                     &.spacing{
                         letter-spacing: 2px;
@@ -971,6 +947,10 @@ section{
                     right: 0px;
                     opacity: 1;
                 }
+                @include mini-desktop {
+                    width: 300px;
+                    height: 300px;
+                }
                 @include tablet{
                     width: 300px;
                     height: 300px;
@@ -984,7 +964,9 @@ section{
                     top: 0;
                     left: 0;
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
+                    object-position: 100% 45%;
                 }
             }
             a{
@@ -1211,7 +1193,7 @@ section{
                     img{
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
+                        object-fit: contain;
                     }
                 }
                 .text{
@@ -1222,6 +1204,7 @@ section{
                     height: 100%;
                     background: var(--black);
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     transform: translateY(100%);
